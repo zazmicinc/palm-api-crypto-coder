@@ -1,0 +1,110 @@
+{
+  "name": "palm-api-crypto-coder",
+  "displayName": "PaLM API Crypto Coder",
+  "description": "Decode and encode data in various formats like Base64 and more. Seamlessly use popular cryptographic algorithms, create digital signatures, and ensure data security. Elevate your coding with CryptoCoder.",
+  "version": "0.0.1",
+  "publisher": "Zazmic",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/zazmicinc/palm-api-crypto-coder.git"
+  },
+  "icon": "icon.png",
+  "galleryBanner": {
+    "color": "#348387",
+    "theme": "dark"
+  },
+  "engines": {
+    "vscode": "^1.81.0"
+  },
+  "categories": [
+    "Programming Languages",
+    "Machine Learning",
+    "Formatters"
+  ],
+  "keywords": [
+    "cryptography",
+    "encoding",
+    "data security",
+    "data encoding",
+    "encryption",
+    "decryption",
+    "cryptographic algorithms",
+    "digital signatures",
+    "secure coding",
+    "coding toolkit",
+    "Base64",
+    "URL encoding",
+    "JSON encoding",
+    "XML encoding",
+    "Random number",
+    "Mock text"
+  ],
+  "activationEvents": [],
+  "main": "./extension.js",
+  "contributes": {
+    "menus": {
+      "editor/context": [
+        {
+          "command": "palm-api-crypto-coder.JSON"
+        },
+        {
+          "command": "palm-api-crypto-coder.XML"
+        },
+        {
+          "submenu": "palm-api-crypto-coder.Random",
+          "group": "palm-api-crypto-coder"
+        }
+      ],
+      "palm-api-crypto-coder.Random": [
+        {
+          "command": "palm-api-crypto-coder.RandomNumber"
+        },
+        {
+          "command": "palm-api-crypto-coder.RandomText"
+        }
+      ]
+    },
+    "submenus": [
+      {
+        "command": "palm-api-crypto-coder.Random",
+        "id": "palm-api-crypto-coder.Random",
+        "label": "Random ..."
+      }
+    ],
+    "commands": [
+      {
+        "command": "palm-api-crypto-coder.JSON",
+        "title": "Convert to JSON"
+      },
+      {
+        "command": "palm-api-crypto-coder.XML",
+        "title": "Convert to XML"
+      },
+      {
+        "command": "palm-api-crypto-coder.RandomText",
+        "title": "Text"
+      },
+      {
+        "command": "palm-api-crypto-coder.RandomNumber",
+        "title": "Number"
+      }
+    ]
+  },
+  "scripts": {
+    "lint": "eslint .",
+    "pretest": "yarn run lint",
+    "test": "node ./test/runTest.js"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.81.0",
+    "@types/glob": "^8.1.0",
+    "@types/mocha": "^10.0.1",
+    "@types/node": "20.2.5",
+    "eslint": "^8.41.0",
+    "glob": "^8.1.0",
+    "mocha": "^10.2.0",
+    "typescript": "^5.1.3",
+    "@vscode/test-electron": "^2.3.2"
+  }
+}
